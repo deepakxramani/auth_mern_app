@@ -31,7 +31,7 @@ const Signup = () => {
     }
 
     try {
-      const url = "http://localhost:8080/auth/signup"
+      const url = `${process.env.BACKEND_URL}/signup`;
       const response = await fetch(url, {
         method: "POST",
         headers: {
