@@ -23,7 +23,7 @@ const Signup = () => {
     setSignUpInfo(copySignUpInfo)
   }
 
-  console.log(`SignUp Info: `, signupInfo);
+  
 
   const handleSignUp = async(e) => {
     e.preventDefault()
