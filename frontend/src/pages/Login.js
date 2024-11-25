@@ -10,6 +10,8 @@ const Login = () => {
     password: ''
   })
 
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
+
   const navigate = useNavigate();
   
   const handleChange = (e) => {
@@ -30,7 +32,7 @@ const Login = () => {
     }
 
     try {
-      const url = `${process.env.BACKEND_URL}/login`;
+      const url = `${serverUrl}/login`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

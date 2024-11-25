@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify'
 const Home = () => {
   const [loggedInUser, setLoggedInUser] = useState('')
   const [products, setProducts] = useState([])
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
 
   const navigate = useNavigate()
   useEffect(() => {
@@ -22,7 +23,7 @@ const Home = () => {
 
   const fetchProducts = async () => {
     try {
-        const url = `${process.env.BACKEND_URL}/products`;
+        const url = `${serverUrl}/products`;
         const headers = {
           headers: {
             'Authorization': localStorage.getItem('token')

@@ -11,6 +11,8 @@ const Signup = () => {
     password: ''
   })
 
+  const serverUrl = process.env.REACT_APP_SERVER_URL;
+
   const navigate = useNavigate();
   
   const handleChange = (e) => {
@@ -31,7 +33,7 @@ const Signup = () => {
     }
 
     try {
-      const url = `${process.env.BACKEND_URL}/signup`;
+      const url = `${serverUrl}/signup`;
       const response = await fetch(url, {
         method: "POST",
         headers: {
