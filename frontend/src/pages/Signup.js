@@ -33,7 +33,7 @@ const Signup = () => {
     }
 
     try {
-      const url = `${serverUrl}/signup`;
+      const url = `${serverUrl}/auth/signup`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

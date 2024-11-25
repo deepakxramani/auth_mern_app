@@ -22,7 +22,7 @@ const Login = () => {
     setLoginInfo(copyLoginInfo)
   }
 
-  console.log(`Login Info: `, loginInfo);
+  // console.log(`Login Info: `, loginInfo);
 
   const handleLogin = async(e) => {
     e.preventDefault()
@@ -32,7 +32,7 @@ const Login = () => {
     }
 
     try {
-      const url = `${serverUrl}/login`;
+      const url = `${serverUrl}/auth/login`;
       const response = await fetch(url, {
         method: "POST",
         headers: {
