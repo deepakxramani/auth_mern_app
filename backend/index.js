@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.use(express.json())
 
 app.use(cors({
-    origin: '*',                                    // Allow requests from this origin
+    origin: process.env.CLIENT_URL,                                    // Allow requests from this origin
     credentials: true                               // If you need to send cookies with the request
 }));                                                // allow requests from clients from anywhere and anyone, also in cors you can specify IPs you want to get requests from
 
