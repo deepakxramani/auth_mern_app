@@ -25,7 +25,6 @@ const Home = () => {
   const fetchProducts = async () => {
     try {
         const url = `${serverUrl}/products`;
-        console.log(url)
         const headers = {
           headers: {
             'Authorization': localStorage.getItem('token')
