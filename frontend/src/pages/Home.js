@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { handleError, handleSuccess } from '../utils'
 import { ToastContainer } from 'react-toastify'
+import serverUrl from '../services/fetchNodeServices'
+
 const Home = () => {
   const [loggedInUser, setLoggedInUser] = useState('')
   const [products, setProducts] = useState([])
-  const serverUrl = process.env.REACT_APP_BACKEND_URL;
-
+  
   const navigate = useNavigate()
   useEffect(() => {
     setLoggedInUser(localStorage.getItem('loggedInUser'))
@@ -24,6 +25,7 @@ const Home = () => {
   const fetchProducts = async () => {
     try {
         const url = `${serverUrl}/products`;
+        console.log(url)
         const headers = {
           headers: {
             'Authorization': localStorage.getItem('token')
