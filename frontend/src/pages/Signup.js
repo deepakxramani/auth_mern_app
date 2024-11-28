@@ -11,7 +11,7 @@ const Signup = () => {
     password: ''
   })
 
-  const serverUrl = "https://auth-mern-app-1-api.vercel.app";
+  const serverUrl = process.env.REACT_APP_BACKEND_URL;
 
   const navigate = useNavigate();
   
