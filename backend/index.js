@@ -17,7 +17,11 @@ app.get('/ping', (req,res) => {
 
 app.use(bodyParser.json())
 app.use(express.json())
-app.use(cors())             // allow requests from clients from anywhere and anyone, also in cors you can specify IPs you want to get requests from
+
+app.use(cors({
+    origin: 'https://auth-mern-app-1-ui.vercel.app', // Allow requests from this origin
+    credentials: true                               // If you need to send cookies with the request
+}));                                                // allow requests from clients from anywhere and anyone, also in cors you can specify IPs you want to get requests from
 
 app.use('/auth', authRouter)
 app.use('/products', productRouter);
